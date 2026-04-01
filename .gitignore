@@ -18,3 +18,7 @@ node_modules/
 venv/
 .env
 .env.*
+dist/
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
