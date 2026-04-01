@@ -25,6 +25,75 @@ body {
   padding: 32px;
 }
 
+.stack {
+  display: grid;
+  gap: 16px;
+}
+
+.stack.tight {
+  gap: 8px;
+}
+
+.panel {
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(29, 36, 51, 0.08);
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.shell-content label {
+  display: grid;
+  gap: 8px;
+}
+
+.shell-content input,
+.shell-content textarea,
+.shell-content button {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(29, 36, 51, 0.14);
+}
+
+.shell-content button {
+  background: #1d2433;
+  color: #fefcf4;
+  cursor: pointer;
+}
+
+.shell-content button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.shell-content ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.shell-content p,
+.shell-content h2,
+.shell-content h3,
+.shell-content h4 {
+  margin: 0;
+}
+
+.pet-summary {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(29, 36, 51, 0.08);
+}
+
 .eyebrow {
   margin: 0 0 8px;
   font-size: 12px;
