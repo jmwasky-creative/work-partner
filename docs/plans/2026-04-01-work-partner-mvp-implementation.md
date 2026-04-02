@@ -643,6 +643,11 @@ git add src/features/settings src/pages/dashboard-page.tsx src/domain/seed-data.
 git commit -m "feat: add save import export controls and demo seeds"
 ```
 
+**Status Update - 2026-04-01**
+
+- Task 7 is now implemented via `src/features/settings/import-export-panel.tsx`, `src/pages/dashboard-page.tsx`, `src/domain/seed-data.ts`, and `src/app/app-smoke.test.tsx`.
+- Verification completed with `npm test -- src/app/app-smoke.test.tsx` and `npm test -- src/domain/seed-data.test.ts`.
+
 ### Task 8: Final Verification And Manual QA
 
 **Files:**
@@ -684,3 +689,11 @@ Expected: Local Vite URL appears, app loads in browser.
 git add README.md docs/plans/2026-04-01-work-partner-mvp-implementation.md
 git commit -m "docs: finalize mvp implementation and verification notes"
 ```
+
+**Verification Notes - 2026-04-01**
+
+- Succeeded: `npm test`
+- Succeeded: `npm run build`
+- Confirmed dev server startup with: `npm run dev -- --host 127.0.0.1`
+- Automated coverage now exercises goal creation, task completion, pet flow, feedback rewards, repository persistence, seed snapshot generation, and dashboard import/export controls.
+- A manual browser pass is still recommended for the full export/import round-trip restoration checklist.

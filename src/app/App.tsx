@@ -16,7 +16,7 @@ export function App() {
           <p className="eyebrow">Work Partner</p>
           <h1>学习成长搭子</h1>
         </div>
-        <nav className="primary-nav" aria-label="Primary">
+        <nav className="primary-nav" aria-label="主导航">
           {links.map((link) => (
             <NavLink key={link.to} to={link.to}>
               {link.label}

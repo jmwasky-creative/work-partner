@@ -8,15 +8,15 @@ describe("CreateGoalForm", () => {
 
     render(<CreateGoalForm onCreateGoal={onCreateGoal} />);
 
-    fireEvent.change(screen.getByLabelText("Goal title"), {
+    fireEvent.change(screen.getByLabelText("目标名称"), {
       target: { value: "Practice React" },
     });
-    fireEvent.change(screen.getByLabelText("Goal description"), {
+    fireEvent.change(screen.getByLabelText("目标描述"), {
       target: { value: "Work through exercises" },
     });
-    const durationInput = screen.getByLabelText("Cycle days");
+    const durationInput = screen.getByLabelText("周期天数");
     fireEvent.change(durationInput, { target: { value: "7" } });
-    fireEvent.click(screen.getByRole("button", { name: "Create Goal" }));
+    fireEvent.click(screen.getByRole("button", { name: "创建目标" }));
 
     expect(onCreateGoal).toHaveBeenCalledWith(
       expect.objectContaining({

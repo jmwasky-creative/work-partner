@@ -12,13 +12,13 @@ export function TaskItem(props: {
           <p>{props.task.description}</p>
         </div>
         <div className="stack tight">
-          <span>{props.task.status === "done" ? "Done" : "Todo"}</span>
+          <span>{props.task.status === "done" ? "已完成" : "待办"}</span>
           <button
             type="button"
             onClick={() => props.onComplete(props.task)}
             disabled={props.task.status === "done"}
           >
-            Complete Task
+            完成任务
           </button>
         </div>
       </div>

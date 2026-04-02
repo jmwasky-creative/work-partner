@@ -7,7 +7,7 @@ test("lets the user keep a wish reward for a later evolution", async () => {
 
   render(<PetPage />);
 
-  await user.click(screen.getByRole("button", { name: "Keep For Later" }));
+  await user.click(screen.getByRole("button", { name: "保留到下次进化" }));
 
-  expect(screen.getByText("Saved for a future evolution")).toBeInTheDocument();
+  expect(screen.getByText("已保留到下一次进化")).toBeInTheDocument();
 });

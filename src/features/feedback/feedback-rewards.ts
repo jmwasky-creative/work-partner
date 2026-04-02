@@ -15,8 +15,8 @@ export function awardFeedbackReward(input: {
   return {
     id: `${normalizedNode}-reward`,
     itemType: "special-item",
-    label: `Explanation reward for ${input.videoTitle}`,
-    badgeLabel: `Explanation Badge: ${input.videoTitle}`,
-    description: `A special reward earned by teaching back the knowledge node ${input.knowledgeNodeId}.`,
+    label: `${input.videoTitle} 的讲解奖励`,
+    badgeLabel: `讲解徽章：${input.videoTitle}`,
+    description: `你通过讲解知识节点 ${input.knowledgeNodeId} 获得了一份特殊奖励。`,
   };
 }

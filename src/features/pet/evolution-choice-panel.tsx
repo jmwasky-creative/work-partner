@@ -5,10 +5,10 @@ export function EvolutionChoicePanel(props: {
 }) {
   return (
     <section className="panel stack">
-      <h3>Evolution Choice</h3>
-      <p>Pending appearance rewards: {props.pendingAppearanceCount}</p>
+      <h3>进化选择</h3>
+      <p>待领取外观奖励：{props.pendingAppearanceCount}</p>
       <button type="button" onClick={props.onKeepForLater}>
-        Keep For Later
+        保留到下次进化
       </button>
       <p>{props.statusMessage}</p>
     </section>

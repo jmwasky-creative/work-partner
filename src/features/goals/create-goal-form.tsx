@@ -22,32 +22,32 @@ export function CreateGoalForm(props: {
       }}
     >
       <label>
-        <span>Goal Title</span>
+        <span>目标名称</span>
         <input
-          aria-label="Goal title"
+          aria-label="目标名称"
           value={title}
           onChange={(event) => setTitle(event.target.value)}
         />
       </label>
       <label>
-        <span>Goal Description</span>
+        <span>目标描述</span>
         <textarea
-          aria-label="Goal description"
+          aria-label="目标描述"
           value={description}
           onChange={(event) => setDescription(event.target.value)}
         />
       </label>
       <label>
-        <span>Duration Days</span>
+        <span>周期天数</span>
         <input
-          aria-label="Cycle days"
+          aria-label="周期天数"
           type="number"
           min={1}
           value={durationDays}
           onChange={(event) => setDurationDays(Number(event.target.value))}
         />
       </label>
-      <button type="submit">Create Goal</button>
+      <button type="submit">创建目标</button>
     </form>
   );
 }

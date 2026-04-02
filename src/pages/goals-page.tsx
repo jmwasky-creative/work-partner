@@ -9,8 +9,8 @@ type Goal = CreateGoalInput & {
 const initialGoals: Goal[] = [
   {
     id: "goal-001",
-    title: "Master React basics",
-    description: "Review hooks, JSX, and state management.",
+    title: "掌握 React 基础",
+    description: "复习 Hooks、JSX 与状态管理。",
     durationDays: 7,
     createdAt: new Date().toISOString(),
   },
@@ -36,9 +36,9 @@ export function GoalsPage() {
         {goals.map((goal) => (
           <article key={goal.id} className="panel">
             <h3>{goal.title}</h3>
-            <p>{goal.description || "No description yet."}</p>
+            <p>{goal.description || "暂时还没有描述。"}</p>
             <small>
-              {goal.durationDays} days · created {new Date(goal.createdAt).toLocaleDateString()}
+              {goal.durationDays} 天 · 创建于 {new Date(goal.createdAt).toLocaleDateString()}
             </small>
           </article>
         ))}

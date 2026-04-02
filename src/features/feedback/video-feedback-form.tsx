@@ -22,8 +22,9 @@ export function VideoFeedbackForm(props: {
       }}
     >
       <label>
-        <span>Knowledge Node</span>
+        <span>知识节点</span>
         <input
+          aria-label="知识节点"
           value={props.value.knowledgeNodeId}
           onChange={(event) =>
             props.onChange({
@@ -34,8 +35,9 @@ export function VideoFeedbackForm(props: {
         />
       </label>
       <label>
-        <span>Video Title</span>
+        <span>视频标题</span>
         <input
+          aria-label="视频标题"
           value={props.value.videoTitle}
           onChange={(event) =>
             props.onChange({
@@ -46,8 +48,9 @@ export function VideoFeedbackForm(props: {
         />
       </label>
       <label>
-        <span>Summary</span>
+        <span>总结</span>
         <textarea
+          aria-label="总结"
           value={props.value.summary}
           onChange={(event) =>
             props.onChange({
@@ -58,7 +61,7 @@ export function VideoFeedbackForm(props: {
         />
       </label>
       <button type="submit" disabled={!canSubmit}>
-        Save Feedback
+        保存反馈
       </button>
     </form>
   );

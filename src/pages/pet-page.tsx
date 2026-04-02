@@ -15,12 +15,14 @@ export function PetPage() {
       unfinishedTaskIds: tasks,
       appearanceItemId: "appearance-halo",
     });
+
     if (wish) {
       bindWish(wish);
-      setMessage(`Wish bound to ${wish.boundTaskId} for ${wish.appearanceItemId}.`);
-    } else {
-      setMessage("继续完成任务后再尝试许愿。");
+      setMessage(`愿望已绑定到任务 ${wish.boundTaskId}，奖励外观为 ${wish.appearanceItemId}。`);
+      return;
     }
+
+    setMessage("继续完成任务后再尝试许愿。");
   };
 
   const markTaskComplete = () => {
@@ -29,20 +31,24 @@ export function PetPage() {
 
   const tasksRemaining = useMemo(() => tasks.length, [tasks]);
 
-  const handleKeepLater = () => setMessage("Saved for a future evolution");
+  const handleKeepLater = () => setMessage("已保留到下一次进化");
 
   return (
     <section className="stack">
-      <h2>Pet Customization</h2>
-      <p>选择外观、许愿和决定是否保留奖励。</p>
+      <h2>宠物养成</h2>
+      <p>在这里管理宠物外观、许愿结果，以及是否保留奖励到下一次进化。</p>
       <PetSummaryCard pet={pet} />
       <div className="wish-panel">
         <p>未完成任务：{tasksRemaining}</p>
-        <button onClick={markTaskComplete} disabled={tasksRemaining === 0}>
+        <button type="button" onClick={markTaskComplete} disabled={tasksRemaining === 0}>
           标记任务完成
         </button>
-        <button onClick={handleWishAttempt}>试试看许愿</button>
-        <button onClick={handleKeepLater}>Keep For Later</button>
+        <button type="button" onClick={handleWishAttempt}>
+          试试看许愿
+        </button>
+        <button type="button" onClick={handleKeepLater}>
+          保留到下次进化
+        </button>
         <p>{message}</p>
       </div>
     </section>

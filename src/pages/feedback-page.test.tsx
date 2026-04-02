@@ -4,17 +4,17 @@ import { FeedbackPage } from "./feedback-page";
 test("submits a feedback record and shows the earned reward", async () => {
   render(<FeedbackPage />);
 
-  fireEvent.change(screen.getByLabelText("Knowledge Node"), {
+  fireEvent.change(screen.getByLabelText("知识节点"), {
     target: { value: "closures" },
   });
-  fireEvent.change(screen.getByLabelText("Video Title"), {
+  fireEvent.change(screen.getByLabelText("视频标题"), {
     target: { value: "Explaining closures" },
   });
-  fireEvent.change(screen.getByLabelText("Summary"), {
+  fireEvent.change(screen.getByLabelText("总结"), {
     target: { value: "Nested functions keep access to outer scope." },
   });
-  fireEvent.click(screen.getByRole("button", { name: "Save Feedback" }));
+  fireEvent.click(screen.getByRole("button", { name: "保存反馈" }));
 
   expect(screen.getByText("Explaining closures")).toBeInTheDocument();
-  expect(screen.getByText(/Earned:/)).toBeInTheDocument();
+  expect(screen.getByText(/已获得：/)).toBeInTheDocument();
 });

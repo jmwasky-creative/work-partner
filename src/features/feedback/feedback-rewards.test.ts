@@ -9,7 +9,7 @@ describe("awardFeedbackReward", () => {
     });
 
     expect(reward.itemType).toBe("special-item");
-    expect(reward.badgeLabel).toContain("Explanation Badge");
+    expect(reward.badgeLabel).toContain("讲解徽章");
     expect(reward.id).toContain("closures");
   });
 });

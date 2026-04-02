@@ -17,6 +17,13 @@ const INITIAL_PET_STATE: PetState = {
   pendingWish: null,
 };
 
+const stageLabels: Record<PetStage, string> = {
+  baby: "幼年期",
+  growth: "成长期",
+  advanced: "进阶期",
+  final: "完全体",
+};
+
 export function usePetProgress() {
   const [state, setState] = useState<PetState>(INITIAL_PET_STATE);
 
@@ -69,16 +76,16 @@ export function PetSummaryCard(props: { pet: PetState }) {
   return (
     <div className="pet-summary">
       <p>
-        Stage: <strong>{pet.stage}</strong>
+        阶段：<strong>{stageLabels[pet.stage]}</strong>
       </p>
       <p>
-        Experience: <strong>{pet.experience} / 100</strong>
+        经验：<strong>{pet.experience} / 100</strong>
       </p>
       <p>
-        Pending wish: <strong>{pet.pendingWish ? pet.pendingWish.appearanceItemId : "None"}</strong>
+        当前愿望：<strong>{pet.pendingWish ? pet.pendingWish.appearanceItemId : "暂无"}</strong>
       </p>
       <p>
-        Pending appearances: <strong>{pet.pendingAppearanceIds.join(", ") || "None"}</strong>
+        待领取外观：<strong>{pet.pendingAppearanceIds.join(", ") || "暂无"}</strong>
       </p>
     </div>
   );

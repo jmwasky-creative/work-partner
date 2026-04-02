@@ -6,14 +6,14 @@ export function WishEventPanel(props: {
 }) {
   return (
     <section className="panel stack">
-      <h3>Wish Event</h3>
-      <p>Unfinished tasks: {props.unfinishedTaskCount}</p>
+      <h3>愿望事件</h3>
+      <p>未完成任务：{props.unfinishedTaskCount}</p>
       <div className="row">
         <button type="button" onClick={props.onCompleteTask} disabled={props.unfinishedTaskCount === 0}>
-          Mark Task Complete
+          标记任务完成
         </button>
         <button type="button" onClick={props.onTriggerWish}>
-          Try A Wish
+          试试看许愿
         </button>
       </div>
       <p>{props.message}</p>

@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { awardFeedbackReward, type FeedbackReward } from "../features/feedback/feedback-rewards";
-import {
-  VideoFeedbackForm,
-  type VideoFeedbackInput,
-} from "../features/feedback/video-feedback-form";
+import { VideoFeedbackForm, type VideoFeedbackInput } from "../features/feedback/video-feedback-form";
 
 interface FeedbackRecord extends VideoFeedbackInput {
   reward: FeedbackReward;
@@ -31,22 +28,22 @@ export function FeedbackPage() {
 
   return (
     <section className="stack">
-      <h2>Feedback</h2>
-      <p>Save a Feynman-style explanation and earn a special reward.</p>
+      <h2>反馈</h2>
+      <p>保存一次费曼式讲解，并领取对应的特殊奖励。</p>
       <VideoFeedbackForm value={formValue} onChange={setFormValue} onSubmit={handleSubmit} />
 
       <section className="panel stack">
-        <h3>Recent Explanations</h3>
+        <h3>最近讲解</h3>
         {records.length === 0 ? (
-          <p>No feedback records yet.</p>
+          <p>还没有反馈记录。</p>
         ) : (
           <ul className="stack">
             {records.map((record) => (
               <li key={record.reward.id} className="stack tight">
                 <strong>{record.videoTitle}</strong>
-                <p>Knowledge node: {record.knowledgeNodeId}</p>
-                <p>Summary: {record.summary}</p>
-                <p>Earned: {record.reward.badgeLabel}</p>
+                <p>知识节点：{record.knowledgeNodeId}</p>
+                <p>总结：{record.summary}</p>
+                <p>已获得：{record.reward.badgeLabel}</p>
               </li>
             ))}
           </ul>
@@ -54,9 +51,9 @@ export function FeedbackPage() {
       </section>
 
       <section className="panel stack">
-        <h3>Special Rewards</h3>
+        <h3>特殊奖励</h3>
         {records.length === 0 ? (
-          <p>No special rewards yet.</p>
+          <p>还没有特殊奖励。</p>
         ) : (
           <ul className="stack">
             {records.map((record) => (
